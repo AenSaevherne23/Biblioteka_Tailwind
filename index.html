@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteka</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+<header class="bg-blue-500 text-white py-4 px-6 flex flex-col sm:flex-row justify-center sm:justify-between items-center">
+  <h1 class="text-4xl font-bold font-serif mb-2 sm:mb-0">Biblioteka</h1>
+
+  <div class="relative inline-block text-left ml-0 sm:ml-8">
+    <button type="button" class="inline-flex justify-center items-center w-full rounded-md bg-blue-700 text-white px-4 py-2 text-sm font-medium hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" onclick="toggleMenu()">
+      Menu
+    </button>
+
+    <div id="menu" class="hidden absolute right-0 mt-2 w-40 rounded-md bg-white shadow-lg py-1 z-10">
+      <a href="logowanie.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">Zaloguj się</a>
+      <a href="ranking.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">Ranking książek</a>
+    </div>
+  </div>
+</header>
+
+<main class="bg-blue-500 text-white py-4 px-6 flex justify-center items-center">
+  <form class="flex items-center">
+    <input type="text" id="search" name="search" placeholder="Tytuł książki" class="px-6 py-2 border rounded-l-md sm:w-64 mr-2 text-black" />
+    <button type="submit" class="bg-blue-700 text-white px-4 py-2 rounded-r-md hover:bg-blue-600 transition duration-300">Szukaj</button>
+  </form>
+</main>
+
+<section class="container mx-auto mt-8">
+  <h2 class="text-3xl font-semibold mb-4 text-center">Nowości</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div id="diunaDetails" class="bg-white rounded shadow p-6 transform transition duration-300 hover:scale-105 mx-auto w-72 cursor-pointer" onclick="openModal('Diuna', 'Frank Herbert', '2021', 'Rebis')">
+      <h2 class="text-lg font-semibold">Diuna</h2>
+      <p class="text-gray-600">Autor: Frank Herbert</p>
+      <p class="text-gray-600">Rok wydania: 2021</p>
+      <p class="text-gray-600">Wydawnictwo: Rebis</p>
+    </div>
+    <div class="bg-white rounded shadow p-6 transform transition duration-300 hover:scale-105 mx-auto w-72">
+      <h2 class="text-lg font-semibold">Krew elfów</h2>
+      <p class="text-gray-600">Autor: Andrzej Sapkowski</p>
+      <p class="text-gray-600">Rok wydania: 2014</p>
+      <p class="text-gray-600">Wydawnictwo: superNOWA</p>
+    </div>
+    <div class="bg-white rounded shadow p-6 transform transition duration-300 hover:scale-105 mx-auto w-72">
+      <h2 class="text-lg font-semibold">Gra o tron</h2>
+      <p class="text-gray-600">Autor: George R.R. Martin</p>
+      <p class="text-gray-600">Rok wydania: 2011</p>
+      <p class="text-gray-600">Wydawnictwo: Zysk i S-ka</p>
+    </div>
+    <div class="bg-white rounded shadow p-6 transform transition duration-300 hover:scale-105 mx-auto w-72">
+      <h2 class="text-lg font-semibold">Ruiny Gorlanu</h2>
+      <p class="text-gray-600">Autor: John Flanagan</p>
+      <p class="text-gray-600">Rok wydania: 2021</p>
+      <p class="text-gray-600">Wydawnictwo: Jaguar</p>
+    </div>
+  </div>
+</section>
+
+<section class="container mx-auto mt-8">
+  <h2 class="text-3xl font-semibold mb-4 text-center">Najczęściej wypożyczane</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div class="bg-white rounded shadow p-6 transform transition duration-300 hover:scale-105 mx-auto w-72">
+      <h2 class="text-lg font-semibold">Wesele</h2>
+      <p class="text-gray-600">Autor: Stanisław Wyspiański</p>
+      <p class="text-gray-600">Rok wydania: 2018</p>
+      <p class="text-gray-600">Wydawnictwo: Greg</p>
+    </div>
+    <div class="bg-white rounded shadow p-6 transform transition duration-300 hover:scale-105 mx-auto w-72">
+      <h2 class="text-lg font-semibold">Lalka</h2>
+      <p class="text-gray-600">Autor: Bolesław Prus</p>
+      <p class="text-gray-600">Rok wydania: 2017</p>
+      <p class="text-gray-600">Wydawnictwo: Greg</p>
+    </div>
+    <div class="bg-white rounded shadow p-6 transform transition duration-300 hover:scale-105 mx-auto w-72">
+      <h2 class="text-lg font-semibold">Zbrodnia i kara</h2>
+      <p class="text-gray-600">Autor: Fiodor Dostojewski</p>
+      <p class="text-gray-600">Rok wydania: 2023</p>
+      <p class="text-gray-600">Wydawnictwo: Świat Książki</p>
+    </div>
+    <div class="bg-white rounded shadow p-6 transform transition duration-300 hover:scale-105 mx-auto w-72">
+      <h2 class="text-lg font-semibold">Potop</h2>
+      <p class="text-gray-600">Autor: Henryk Sienkiewicz</p>
+      <p class="text-gray-600">Rok wydania: 2018</p>
+      <p class="text-gray-600">Wydawnictwo: Bellona</p>
+    </div>
+  </div>
+</section>
+
+<div id="myModal" class="modal hidden fixed inset-0 z-50 overflow-auto bg-gray-800 bg-opacity-50 flex justify-center items-center">
+  <div class="bg-white p-8 rounded shadow-md w-5/6 md:max-w-3xl">
+    <div class="flex justify-between items-center mb-4">
+      <h2 id="modalTitle" class="text-xl font-semibold"></h2>
+      <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+        <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M6.293 6.293a1 1 0 0 1 1.414 0L12 10.586l4.293-4.293a1 1 0 1 1 1.414 1.414L13.414 12l4.293 4.293a1 1 0 0 1-1.414 1.414L12 13.414l-4.293 4.293a1 1 0 0 1-1.414-1.414L10.586 12 6.293 7.707a1 1 0 0 1 0-1.414z"/>
+        </svg>
+      </button>
+    </div>
+    <img id="modalImage" class="w-full h-auto mb-4 rounded" src="https://picsum.photos/600/400" alt="Okładka książki">
+    <p id="modalAuthor" class="text-gray-600"></p>
+    <p id="modalYear" class="text-gray-600"></p>
+    <p id="modalPublisher" class="text-gray-600"></p>
+  </div>
+</div>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('hidden');
+  }
+
+  function openModal(title, author, year, publisher) {
+    const modal = document.getElementById('myModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalAuthor = document.getElementById('modalAuthor');
+    const modalYear = document.getElementById('modalYear');
+    const modalPublisher = document.getElementById('modalPublisher');
+    const modalImage = document.getElementById('modalImage');
+
+    modalTitle.textContent = title;
+    modalAuthor.textContent = `Autor: ${author}`;
+    modalYear.textContent = `Rok wydania: ${year}`;
+    modalPublisher.textContent = `Wydawnictwo: ${publisher}`;
+    modalImage.src = "https://picsum.photos/600/400";
+
+    modal.classList.remove('hidden');
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('myModal');
+    modal.classList.add('hidden');
+  }
+</script>
+
+</body>
+
+</html>
